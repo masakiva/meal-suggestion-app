@@ -50,9 +50,17 @@ This PoC targets two audiences:
 
 ## Roadmap
 
-- **V1: Project Setup, Domain & CRUD (~10-12h)**
-- **V2: AI Suggestions (~5-7h)**
-- **V3: Deployment & Demo Readiness (~3-5h)**
+- [**V1: Project Setup, Domain & CRUD (~10-12h)**](docs/v1-setup-domain-crud.md)
+  - Environment, domain entities, repository interfaces + IndexedDB.
+  - Recipe Bank and Pantry management UI.
+  - i18n foundation, routing, app shell.
+- [**V2: AI Suggestions (~5-7h)**](docs/v2-ai-suggestions.md)
+  - Groq integration behind `AIService` interface.
+  - Suggestion UI with AI-powered matching.
+  - Settings screen (model selector, data export/import).
+- [**V3: Deployment & Demo Readiness (~3-5h)**](docs/v3-deployment.md)
+  - Serverless proxy for Groq API key.
+  - Seed data, onboarding, deploy.
 
 ## Testing Strategy
 
@@ -63,3 +71,24 @@ This PoC targets two audiences:
 | Application (use cases) | Unit tests with mocked repos + AI service |
 | UI (components) | `@vue/test-utils` for critical interactions |
 | AI integration | Mock `AIService` in tests; manual testing with real Groq |
+
+## Future Improvements (Out of PoC Scope)
+
+- Domain-level `IngredientMatcher` for offline scoring
+- Tauri integration (swap IndexedDB → SQLite)
+- Autocomplete for ingredient names
+- Predefined ingredient list with synonyms
+- Recipe editing (not just add/delete)
+- Pantry item quantity merging
+- Expiration tracking
+- Shared household sync
+
+## Verification
+
+- `npm run dev` → app loads with all three routes
+- Add a recipe → appears in recipe list → persists on refresh
+- Add pantry items → appear grouped by category → persist on refresh
+- Click "Get Suggestions" → loading state → AI suggestions appear with explanations
+- Switch language → all UI text updates
+- `npx vitest run` → all tests pass
+- Deployed URL → same behavior as local
