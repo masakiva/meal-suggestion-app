@@ -4,19 +4,19 @@
 
 ### Objective
 
-Secure the Groq API key and deploy publicly.
+Secure the AI API key and deploy publicly.
 
 ### Tasks
 
 1. **Serverless proxy:**
-   - Vercel serverless function at `/api/suggest`.
-   - Forwards requests to Groq with server-side API key.
+   - Serverless function at `/api/suggest` (platform TBD: Vercel, Netlify, etc.).
+   - Forwards requests to AI provider with server-side API key.
    - Basic rate limiting.
-   - `GroqAIService` calls proxy URL in production.
+   - `AIService` implementation calls proxy URL in production.
 
 2. **Deploy:**
-   - `vite build` + Vercel deployment.
-   - Environment variable for Groq API key.
+   - `vite build` + platform deployment.
+   - Environment variable for AI API key.
    - End-to-end verification on deployed URL.
 
 ## Iteration 2: Seed Data & Onboarding

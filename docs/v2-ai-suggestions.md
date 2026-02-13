@@ -1,10 +1,10 @@
 # V2: AI Suggestions
 
-## Iteration 1: Groq Integration
+## Iteration 1: AI Integration
 
 ### Objective
 
-Implement AI-powered meal suggestions using Groq.
+Implement AI-powered meal suggestions. Groq as initial provider behind generic `AIService`.
 
 ### Tasks
 
@@ -35,7 +35,7 @@ Settings screen and UX improvements.
 ### Tasks
 
 1. **Settings view:**
-   - Groq model selector.
+   - AI model selector.
    - Language selector.
    - Data export/import (recipes + pantry as JSON).
 

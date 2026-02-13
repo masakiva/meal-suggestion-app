@@ -22,7 +22,7 @@ Set up the development environment with all tooling configured and verified.
    ```
    src/
      domain/         # Entities, types, interfaces (zero dependencies)
-     infrastructure/ # IndexedDB repositories, Groq service
+     infrastructure/ # IndexedDB repositories, AI service implementations
      application/    # Use cases (orchestration)
      ui/
        components/   # Reusable Vue components

@@ -17,9 +17,9 @@ This PoC targets two audiences:
 - **PoC strategy:** Single PoC targeting both collaborators and friends/users.
 - **PoC scope:** Full core loop — Recipe Bank + Ingredients List + AI Suggestions.
 - **Storage:** Hybrid — IndexedDB with repository abstraction (future Tauri/SQLite swap).
-- **Groq access:** Direct client-side first, then thin serverless proxy before deployment.
-- **Deployment:** Online (Vercel/Netlify). Friends get a URL.
-- **UI styling:** Tailwind CSS.
+- **AI provider:** Groq API for PoC (temporary). AI interface is generic — provider can be swapped later.
+- **Deployment:** Online. Friends get a URL. Platform TBD (Vercel, Netlify, etc.).
+- **UI styling:** Tailwind CSS (tentative — pending collaborator input).
 - **Language:** i18n with vue-i18n. English (default), Japanese, French.
 - **API key UX:** Proxy only. Friends just use the app, key is server-side.
 - **Ingredient input:** Free text. AI handles fuzzy/synonym/cross-language matching.
@@ -40,13 +40,13 @@ This PoC targets two audiences:
 ## Technical Stack
 
 - **Framework:** Vue 3 + TypeScript (Composition API)
-- **AI:** Groq API (LLM-powered matching and suggestions)
+- **AI:** Groq API for PoC, behind generic `AIService` interface
 - **Storage:** IndexedDB via `idb` library, behind repository interfaces
 - **Styling:** Tailwind CSS
 - **i18n:** vue-i18n (EN, JA, FR)
 - **Testing:** Vitest + `fake-indexeddb` + `@vue/test-utils`
 - **Build:** Vite
-- **Deployment:** Vercel (serverless proxy + static SPA)
+- **Deployment:** TBD (serverless proxy + static SPA)
 
 ## Roadmap
 
@@ -55,11 +55,11 @@ This PoC targets two audiences:
   - Recipe Bank and Pantry management UI.
   - i18n foundation, routing, app shell.
 - [**V2: AI Suggestions (~5-7h)**](docs/v2-ai-suggestions.md)
-  - Groq integration behind `AIService` interface.
+  - AI integration behind generic `AIService` interface (Groq as initial provider).
   - Suggestion UI with AI-powered matching.
   - Settings screen (model selector, data export/import).
 - [**V3: Deployment & Demo Readiness (~3-5h)**](docs/v3-deployment.md)
-  - Serverless proxy for Groq API key.
+  - Serverless proxy for AI API key.
   - Seed data, onboarding, deploy.
 
 ## Testing Strategy
