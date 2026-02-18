@@ -11,7 +11,7 @@ Set up the development environment with all tooling configured and verified.
 ### Tasks
 
 1. **Initialize project:**
-   - `npm create vite@latest` with Vue + TypeScript template.
+   - `npm create vue@latest` (create-vue) with TypeScript enabled.
    - Install: `vitest`, `tailwindcss`, `vue-i18n`, `vue-router`, `idb`.
    - Configure `tsconfig.json` (strict mode).
    - Configure Tailwind CSS.
