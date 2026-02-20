@@ -17,7 +17,14 @@ Each step should be an atomic change, reasonable for a single git commit, and qu
 ## Local Verification & Tracking
 
 - **Local Verification:** Always run local tests before declaring a step complete.
-- **Progress Tracking:** Update `DEV_LOG.md` after completing each significant task or iteration to maintain a clear record of progress.
+- **Progress Tracking:** `DEV_LOG.md` is a minimal offset tracker — current position and completed milestones only.
+
+## Documentation Policy
+
+- **Plan docs:** Update only when a design decision changes scope _before_ implementation. Do not update to reflect implementation details after the fact — the code is the truth.
+- **High-level plan / roadmap:** Update only for backlog additions and major directional changes.
+- **`DEV_LOG.md`:** Keep minimal. Current position + completed milestones. Never more than ~10 lines.
+- **Commit messages:** The real history. Decisions, deviations, and reasoning live here, not in doc files.
 
 ## Commit Conventions
 
