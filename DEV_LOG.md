@@ -2,9 +2,9 @@
 
 ## Current position
 
-V1 Iteration 2: Domain Modeling — in progress (`repositories.ts`, `services.ts` remaining)
+V1 Iteration 3: IndexedDB Repositories — not started
 
 ## Completed
 
 - V1 Iteration 1: Project Bootstrap
-- V1 Iteration 2: `entities.ts`
+- V1 Iteration 2: Domain Modeling (`entities.ts`, `repositories.ts`, `services.ts`)
