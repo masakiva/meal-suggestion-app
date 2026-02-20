@@ -36,7 +36,7 @@ Types: `feat`, `fix`, `test`, `refactor`, `docs`, `chore`.
 
 Each cycle is an atomic change: one concern, one commit, quickly reviewable. **After each step, write a draft commit message to `GIT_COMMIT_MSG` in the project root, then pause to let me commit the changes myself.**
 
-**One concern per commit.** Don't mix refactors with new features, or test changes with production code changes. In particular, documentation updates (project plans, `DEV_LOG.md`, `AGENTS.md`) must be in their own separate commits.
+**One concern per commit.** Don't mix refactors with new features, or test changes with production code changes. Documentation updates (project plans, `AGENTS.md`) must be in their own separate commits. Exception: `DEV_LOG.md` progress updates may be bundled with the implementation commit they relate to.
 
 1. **Types.** Create or update types and interfaces. (Write to `GIT_COMMIT_MSG` & pause)
 2. **Red.** Create a failing test case. (Write to `GIT_COMMIT_MSG` & pause)
