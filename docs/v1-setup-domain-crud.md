@@ -96,9 +96,10 @@ Build the Recipe Bank management screen and app shell.
    - Layout: header (app name + language switcher) + navigation tabs.
 
 3. **RecipeForm component:**
-   - Fields: name, meal type (select), prep time, notes.
+   - Fields: name, meal type (select), notes.
    - Dynamic ingredient rows: name + quantity + optional checkbox. Add/remove rows.
    - Validation: name required, at least one ingredient.
+   - Note: `prepTime` was deferred from `Recipe` entity. Add `prepTime?: number` to entity and a prep time field here if desired.
 
 4. **RecipeList component:**
    - Recipe cards: name, meal type badge, ingredient count.
@@ -117,12 +118,14 @@ Build the Pantry management screen.
 ### Tasks
 
 1. **PantryForm component:**
-   - Fields: ingredient name, category (select), quantity (optional).
+   - Fields: ingredient name, quantity (optional).
    - Quick-add: type + Enter.
+   - Note: `IngredientCategory` was deferred from `PantryItem` entity. Add `category?: IngredientCategory` to entity and a category select here if desired.
 
 2. **PantryList component:**
-   - Items grouped by category.
+   - Flat list of items (no grouping).
    - Delete per item. "Clear All" with confirmation.
+   - Note: grouping by category requires `IngredientCategory` to be added to `PantryItem` first.
 
 3. **Pantry view** (`/pantry`):
    - Composes PantryForm + PantryList.

@@ -80,7 +80,10 @@ This PoC targets two audiences:
 - Predefined ingredient list with synonyms
 - Recipe editing (not just add/delete)
 - Pantry item quantity merging
-- Expiration tracking
+- Expiration tracking (`addedAt` on `PantryItem` deferred from domain entities)
+- Pantry grouping by category (`IngredientCategory` deferred from domain entities)
+- Recipe prep time display (`prepTime` deferred from domain entities)
+- AI suggestion ranking by match score (`MealSuggestion.score` deferred from domain entities)
 - Shared household sync
 
 ## Verification
