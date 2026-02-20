@@ -1,13 +1,4 @@
-export type IngredientCategory = 'Protein' | 'Vegetable' | 'Dairy' | 'Grain' | 'Seasoning' | 'Other'
-
 export type MealType = 'Breakfast' | 'Lunch' | 'Dinner' | 'Bento' | 'Snack'
-
-export interface Ingredient {
-  id: string
-  name: string
-  category?: IngredientCategory
-  quantity?: string
-}
 
 export interface RecipeIngredient {
   name: string
@@ -20,20 +11,18 @@ export interface Recipe {
   name: string
   ingredients: RecipeIngredient[]
   mealType?: MealType
-  prepTime?: number
   notes?: string
 }
 
 export interface PantryItem {
   id: string
-  ingredient: Ingredient
-  addedAt: Date
+  name: string
+  quantity?: string
 }
 
 export interface MealSuggestion {
   recipeName: string
-  score: number
   matchedIngredients: string[]
-  missingIngredients: string[]
+  missingIngredients: RecipeIngredient[]
   explanation: string
 }
