@@ -32,9 +32,9 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/): `type: desc
 
 Types: `feat`, `fix`, `test`, `refactor`, `docs`, `chore`.
 
-## Step Structure
+## Development Cycle
 
-Steps should follow this pattern for each atomic change. **After each step, you must write a draft commit message to a file named `GIT_COMMIT_MSG` in the project root, and then pause to let me commit the changes myself.**
+Each cycle is an atomic change: one concern, one commit, quickly reviewable. **After each step, write a draft commit message to `GIT_COMMIT_MSG` in the project root, then pause to let me commit the changes myself.**
 
 **One concern per commit.** Don't mix refactors with new features, or test changes with production code changes. In particular, documentation updates (project plans, `DEV_LOG.md`, `AGENTS.md`) must be in their own separate commits.
 
@@ -42,7 +42,8 @@ Steps should follow this pattern for each atomic change. **After each step, you 
 2. **Red.** Create a failing test case. (Write to `GIT_COMMIT_MSG` & pause)
 3. **Green.** Implement the minimal code to pass the test and verify locally. (Write to `GIT_COMMIT_MSG` & pause)
 4. **Refactor & Verify.** Clean up code and tests, then ensure tests still pass. (Write to `GIT_COMMIT_MSG` & pause)
+5. **Docs.** At the end of a meaningful unit of work: update `DEV_LOG.md` current position. If a design decision changed during this cycle, update the relevant plan doc. (Write to `GIT_COMMIT_MSG` & pause)
 
-Steps can be combined or skipped when appropriate (e.g., type-only changes don't need Red/Green, config changes don't need tests).
+Steps can be combined or skipped when appropriate (e.g., type-only changes don't need Red/Green, config changes don't need tests, step 5 is skipped for mid-iteration commits).
 
 If there are tasks that need action from my side, please guide me with precise instructions.
