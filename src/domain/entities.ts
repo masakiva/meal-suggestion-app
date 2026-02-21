@@ -1,6 +1,6 @@
 export type MealType = 'Breakfast' | 'Lunch' | 'Dinner' | 'Bento' | 'Snack'
 
-export interface RecipeIngredient {
+export interface Ingredient {
   name: string
   quantity?: string
 }
@@ -8,20 +8,19 @@ export interface RecipeIngredient {
 export interface Recipe {
   id: string
   name: string
-  ingredients: RecipeIngredient[]
+  ingredients: Ingredient[]
   mealType?: MealType
   notes?: string
 }
 
 export interface PantryItem {
   id: string
-  name: string
-  quantity?: string
+  ingredients: Ingredient
 }
 
 export interface MealSuggestion {
   recipeName: string
   matchedIngredients: string[]
-  missingIngredients: RecipeIngredient[]
+  missingIngredients: Ingredient[]
   explanation: string
 }
