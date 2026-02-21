@@ -3,7 +3,6 @@ export type MealType = 'Breakfast' | 'Lunch' | 'Dinner' | 'Bento' | 'Snack'
 export interface RecipeIngredient {
   name: string
   quantity?: string
-  optional?: boolean
 }
 
 export interface Recipe {
