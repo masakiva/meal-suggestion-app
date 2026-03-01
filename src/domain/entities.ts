@@ -15,7 +15,7 @@ export interface Recipe {
 
 export interface PantryItem {
   id: string
-  ingredients: Ingredient
+  ingredient: Ingredient
 }
 
 export interface MealSuggestion {
