@@ -1,0 +1,46 @@
+{
+  "app": {
+    "name": "Meal Suggester"
+  },
+  "nav": {
+    "recipes": "Recipe Bank",
+    "pantry": "Pantry",
+    "suggestions": "Suggestions"
+  },
+  "language": {
+    "label": "Language"
+  },
+  "recipe": {
+    "bankTitle": "Recipe Bank",
+    "form": {
+      "namePlaceholder": "Recipe name",
+      "mealType": "Meal type",
+      "notes": "Notes",
+      "notesPlaceholder": "Optional notes...",
+      "ingredientsHeading": "Ingredients",
+      "ingredientNamePlaceholder": "Ingredient name",
+      "quantityPlaceholder": "Quantity",
+      "optional": "Optional",
+      "addIngredient": "Add ingredient",
+      "removeIngredient": "Remove",
+      "saveButton": "Save recipe",
+      "validation": {
+        "nameRequired": "Recipe name is required.",
+        "ingredientRequired": "At least one ingredient is required."
+      }
+    },
+    "list": {
+      "empty": "No recipes yet. Add one above.",
+      "ingredientCount": "{count} ingredient | {count} ingredients",
+      "deleteButton": "Delete",
+      "deleteConfirm": "Delete \"{name}\"?"
+    },
+    "mealType": {
+      "Breakfast": "Breakfast",
+      "Lunch": "Lunch",
+      "Dinner": "Dinner",
+      "Bento": "Bento",
+      "Snack": "Snack"
+    }
+  }
+}
