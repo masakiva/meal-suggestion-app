@@ -33,13 +33,20 @@ export function useRecipeForm() {
   }
 
   function toRecipeInput(): Omit<Recipe, 'id'> {
+    const trimmedName = name.value.trim()
+    const trimmedNotes = notes.value.trim()
+
     return {
-      name: name.value,
+      name: trimmedName,
       ingredients: ingredients.value
-        .filter((row) => row.name.trim())
-        .map(({ name, quantity }) => (quantity.trim() ? { name, quantity } : { name })),
+        .map(({ name, quantity }) => ({
+          name: name.trim(),
+          quantity: quantity.trim(),
+        }))
+        .filter((row) => row.name)
+        .map(({ name, quantity }) => (quantity ? { name, quantity } : { name })),
       ...(mealType.value ? { mealType: mealType.value } : {}),
-      ...(notes.value.trim() ? { notes: notes.value } : {}),
+      ...(trimmedNotes ? { notes: trimmedNotes } : {}),
     }
   }
 

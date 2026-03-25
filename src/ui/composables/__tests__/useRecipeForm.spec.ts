@@ -75,5 +75,30 @@ describe('useRecipeForm', () => {
       ingredients.value = [{ id: 'z', name: 'Rice', quantity: '' }]
       expect(toRecipeInput().mealType).toBeUndefined()
     })
+
+    it('should trim recipe name, ingredient name, quantity, and notes', () => {
+      const { name, mealType, notes, ingredients, toRecipeInput } = useRecipeForm()
+      name.value = '  Pasta Bake  '
+      mealType.value = 'Dinner'
+      notes.value = '  Add cheese  '
+      ingredients.value = [{ id: 'trimmed', name: '  Pasta  ', quantity: ' 200g  ' }]
+
+      expect(toRecipeInput()).toEqual({
+        name: 'Pasta Bake',
+        mealType: 'Dinner',
+        notes: 'Add cheese',
+        ingredients: [{ name: 'Pasta', quantity: '200g' }],
+      })
+    })
+
+    it('should omit quantity when it is empty after trimming', () => {
+      const { name, ingredients, toRecipeInput } = useRecipeForm()
+      name.value = 'Rice'
+      ingredients.value = [{ id: 'trim-empty', name: ' Rice ', quantity: '   ' }]
+
+      const recipe = toRecipeInput()
+      expect(recipe.ingredients).toHaveLength(1)
+      expect(recipe.ingredients[0]!).toEqual({ name: 'Rice' })
+    })
   })
 })
