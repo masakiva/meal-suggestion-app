@@ -27,8 +27,8 @@ describe('useRecipeForm', () => {
       const { ingredients, addIngredient } = useRecipeForm()
       addIngredient()
       expect(ingredients.value).toHaveLength(1)
-      expect(ingredients.value[0].name).toBe('')
-      expect(ingredients.value[0].quantity).toBe('')
+      expect(ingredients.value[0]!.name).toBe('')
+      expect(ingredients.value[0]!.quantity).toBe('')
     })
   })
 
@@ -37,11 +37,11 @@ describe('useRecipeForm', () => {
       const { ingredients, addIngredient, removeIngredient } = useRecipeForm()
       addIngredient()
       addIngredient()
-      ingredients.value[0].name = 'first'
-      ingredients.value[1].name = 'second'
+      ingredients.value[0]!.name = 'first'
+      ingredients.value[1]!.name = 'second'
       removeIngredient(0)
       expect(ingredients.value).toHaveLength(1)
-      expect(ingredients.value[0].name).toBe('second')
+      expect(ingredients.value[0]!.name).toBe('second')
     })
   })
 
@@ -64,7 +64,9 @@ describe('useRecipeForm', () => {
       const { name, ingredients, toRecipeInput } = useRecipeForm()
       name.value = 'Rice'
       ingredients.value = [{ id: 'y', name: 'Rice', quantity: '' }]
-      expect(toRecipeInput().ingredients[0]).toEqual({ name: 'Rice' })
+      const recipe = toRecipeInput()
+      expect(recipe.ingredients).toHaveLength(1)
+      expect(recipe.ingredients[0]!).toEqual({ name: 'Rice' })
     })
 
     it('should omit mealType from output when not selected', () => {
