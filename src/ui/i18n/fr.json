@@ -1,0 +1,46 @@
+{
+  "app": {
+    "name": "Meal Suggester"
+  },
+  "nav": {
+    "recipes": "Recettes",
+    "pantry": "Garde-manger",
+    "suggestions": "Suggestions"
+  },
+  "language": {
+    "label": "Langue"
+  },
+  "recipe": {
+    "bankTitle": "Recettes",
+    "form": {
+      "namePlaceholder": "Nom de la recette",
+      "mealType": "Type de repas",
+      "notes": "Notes",
+      "notesPlaceholder": "Notes optionnelles...",
+      "ingredientsHeading": "Ingrédients",
+      "ingredientNamePlaceholder": "Nom de l'ingrédient",
+      "quantityPlaceholder": "Quantité",
+      "optional": "Optionnel",
+      "addIngredient": "Ajouter un ingrédient",
+      "removeIngredient": "Supprimer",
+      "saveButton": "Enregistrer la recette",
+      "validation": {
+        "nameRequired": "Le nom de la recette est obligatoire.",
+        "ingredientRequired": "Au moins un ingrédient est requis."
+      }
+    },
+    "list": {
+      "empty": "Aucune recette. Ajoutez-en une ci-dessus.",
+      "ingredientCount": "{count} ingrédient | {count} ingrédients",
+      "deleteButton": "Supprimer",
+      "deleteConfirm": "Supprimer « {name} » ?"
+    },
+    "mealType": {
+      "Breakfast": "Petit-déjeuner",
+      "Lunch": "Déjeuner",
+      "Dinner": "Dîner",
+      "Bento": "Bento",
+      "Snack": "Collation"
+    }
+  }
+}

@@ -10,8 +10,8 @@ async function makeTestDB(): Promise<AppDB> {
   return openAppDB()
 }
 
-const flour: PantryItem = { id: 'p1', name: 'Flour', quantity: '500g' }
-const egg: PantryItem = { id: 'p2', name: 'Egg' }
+const flour: PantryItem = { id: 'p1', ingredient: { name: 'Flour', quantity: '500g' } }
+const egg: PantryItem = { id: 'p2', ingredient: { name: 'Egg' } }
 
 describe('IndexedDBPantryRepository', () => {
   let repo: IndexedDBPantryRepository
@@ -33,11 +33,12 @@ describe('IndexedDBPantryRepository', () => {
 
   it('should overwrite an item on save with same id', async () => {
     await repo.save(flour)
-    const updated: PantryItem = { ...flour, quantity: '1kg' }
+    const updated: PantryItem = { ...flour, ingredient: { ...flour.ingredient, quantity: '1kg' } }
     await repo.save(updated)
     const all = await repo.getAll()
     expect(all).toHaveLength(1)
-    expect(all[0].quantity).toBe('1kg')
+    expect(all[0]).toBeDefined()
+    expect(all[0]?.ingredient.quantity).toBe('1kg')
   })
 
   it('should delete an item by id', async () => {

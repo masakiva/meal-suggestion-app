@@ -1,0 +1,46 @@
+{
+  "app": {
+    "name": "食事提案"
+  },
+  "nav": {
+    "recipes": "レシピ帳",
+    "pantry": "食材庫",
+    "suggestions": "おすすめ"
+  },
+  "language": {
+    "label": "言語"
+  },
+  "recipe": {
+    "bankTitle": "レシピ帳",
+    "form": {
+      "namePlaceholder": "レシピ名",
+      "mealType": "食事の種類",
+      "notes": "メモ",
+      "notesPlaceholder": "任意のメモ...",
+      "ingredientsHeading": "食材",
+      "ingredientNamePlaceholder": "食材名",
+      "quantityPlaceholder": "分量",
+      "optional": "任意",
+      "addIngredient": "食材を追加",
+      "removeIngredient": "削除",
+      "saveButton": "レシピを保存",
+      "validation": {
+        "nameRequired": "レシピ名は必須です。",
+        "ingredientRequired": "食材を少なくとも1つ入力してください。"
+      }
+    },
+    "list": {
+      "empty": "レシピがありません。上から追加してください。",
+      "ingredientCount": "食材 {count} 個",
+      "deleteButton": "削除",
+      "deleteConfirm": "「{name}」を削除しますか？"
+    },
+    "mealType": {
+      "Breakfast": "朝食",
+      "Lunch": "昼食",
+      "Dinner": "夕食",
+      "Bento": "弁当",
+      "Snack": "間食"
+    }
+  }
+}

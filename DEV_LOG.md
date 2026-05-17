@@ -2,7 +2,7 @@
 
 ## Current position
 
-V1 Iteration 4: Recipe Bank UI — not started
+V1 Iteration 4: Recipe Bank UI — in progress (app shell, i18n, RecipeForm done; Recipes view wiring pending)
 
 ## Completed
 

@@ -53,7 +53,6 @@ Define all domain types and repository interfaces. No implementation — types o
 
 2. **Repository interfaces** (`src/domain/repositories.ts`):
    - `RecipeRepository`: `getAll, getById, save, delete`
-   - `PantryRepository`: `getAll, save, delete, clear`
 
 3. **AI service interface** (`src/domain/services.ts`):
    - `AIService`: `generateSuggestions(recipes, pantryItems, mealType?): Promise<MealSuggestion[]>`
